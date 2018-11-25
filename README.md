@@ -9,9 +9,27 @@ Made with the DOM.
 ```js
 const allBooks = document.getElementById('book-list');
 
-console.log(allBooks);
-
-// expected output
+// output
 <div id="book-list">...</div>
+
+```
+
+## Get Elements By Tag Name 
+
+```js
+const btns = document.getElementsByTagName('button')
+
+// output
+HTMLCollection(4) [button, button, button, button]
+
+```
+
+## Get Elements By Class Name
+
+```js
+const myBooks = document.getElementsByClassName('book')
+
+// output
+HTMLCollection(4) [div.book, div.book, div.book, div.book]
 
 ```
