@@ -10,11 +10,13 @@ const myQueryBook = document.querySelector('#book-list .book:nth-child(2) div:fi
 
 const allQueryBooks = document.querySelectorAll('#book-list .book div p');
 
+
+
 const allParagraphs = document.querySelectorAll('#book-list .book div p');
 
 const changeParagraph = paragraphs => {
   const arr = [...paragraphs]
-    const paragraphsArr = arr.map(item => item.textContent = 'hello')
+    const paragraphsArr = arr.map(item => item.textContent += ' (book-title)')
   return paragraphsArr
 }
 
