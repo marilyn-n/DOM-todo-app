@@ -63,4 +63,5 @@ const allQueryBook = document.querySelector('#book-list .book div p'); // return
 
 ## Properties
 
-* textContent: It changes the ctext content of a element.
+* textContent: appends or replace text content to an element.
+* innerHTML: add text.
