@@ -16,6 +16,8 @@ const allBooks = document.getElementById('book-list');
 
 ## Get Elements By Tag Name 
 
+HTML Collections have to be turned into array to later iterate over them.
+
 ```js
 const btns = document.getElementsByTagName('button')
 
@@ -43,6 +45,8 @@ const myQueryBook = document.querySelector('#book-list .book:nth-child(2) div:fi
 ```
 
 ## Query Selector All
+
+It returns with a nodeList you can iterate over the nodeList without turning it into an array.
 ```js
 const allQueryBook = document.querySelector('#book-list .book div p'); // returns a nodeList with all the p elements.
 
@@ -52,3 +56,11 @@ const allQueryBook = document.querySelector('#book-list .book div p'); // return
 <p>...</p>
 
 ```
+
+### HTML Collections
+
+### Node List
+
+## Properties
+
+* textContent: It changes the content of a text.

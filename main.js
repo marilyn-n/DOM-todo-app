@@ -4,8 +4,21 @@ const buttons = document.getElementsByTagName('button');
 
 const myBooks = document.getElementsByClassName('book');
 
-const toArray = [...buttons].map(btn => btn); // turns HTML collection into an Iterable Array
+const toArray = [...buttons].map(btn => console.log(btn.textContent)); // turns HTML collection into an Iterable Array
 
 const myQueryBook = document.querySelector('#book-list .book:nth-child(2) div:first-child p');
 
 const allQueryBooks = document.querySelectorAll('#book-list .book div p');
+
+const allParagraphs = document.querySelectorAll('#book-list .book div p');
+
+const changeParagraph = paragraphs => {
+  const arr = [...paragraphs]
+    const paragraphsArr = arr.map(item => item.textContent = 'hello')
+  return paragraphsArr
+}
+
+changeParagraph(allParagraphs)
+ 
+
+
