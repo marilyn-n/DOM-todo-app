@@ -26,5 +26,7 @@ const bookList = document.querySelector('h3');
 bookList.innerHTML = '<h3>Books and more books </h3>'
 bookList.innerHTML += '<h6>This is how you add text to HTML</h6>'
 
+//NODE Ep 6
+
 
 

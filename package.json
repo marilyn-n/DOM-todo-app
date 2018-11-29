@@ -1,0 +1,28 @@
+{
+  "name": "dom-course",
+  "version": "1.0.0",
+  "description": "A Book-Store App to store your favorite books.",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marilyn-n/dom-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marilyn-n/dom-course/issues"
+  },
+  "homepage": "https://github.com/marilyn-n/dom-course#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
