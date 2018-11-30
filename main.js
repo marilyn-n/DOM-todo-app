@@ -36,3 +36,15 @@ bookList.addEventListener('click', e => {
     parent.parentNode.removeChild(parent);
   }
 });
+
+// forms
+
+const addBookForm = document.forms['new-book'];
+
+addBookForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const value = addBookForm.querySelector('input[type="text"]').value;
+  console.log(value);
+});
+
+// ep 12 creating elements
