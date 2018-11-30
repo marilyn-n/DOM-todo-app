@@ -21,12 +21,18 @@ const changeParagraph = paragraphs => {
 }
 
 changeParagraph(allParagraphs)
- 
-const bookList = document.querySelector('h3');
-bookList.innerHTML = '<h3>Books and more books </h3>'
-bookList.innerHTML += '<h6>This is how you add text to HTML</h6>'
 
-//NODE Ep 6
+//  replace or add text
+const h3 = document.querySelector('h3');
+h3.innerHTML = '<h3>Books and more books </h3>'
+h3.innerHTML += '<h6>This is how you add text to HTML</h6>'
 
+// delete a book
+const bookList = document.querySelector('#book-list');
 
-
+bookList.addEventListener('click', e => {
+  if(e.target.tagName === 'BUTTON') {
+    const parent = e.target.parentElement.parentElement;  
+    parent.parentNode.removeChild(parent);
+  }
+});
