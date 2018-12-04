@@ -60,3 +60,8 @@ button {
 .book > div:nth-child(2) {
   margin-top: 25px
 }
+
+.form {
+  display: flex;
+  justify-content: space-around;
+}

@@ -59,6 +59,9 @@ addBookForm.addEventListener('submit', e => {
   deleteBtn.textContent = "delete";
   bookTitle.textContent = value;
 
+  // add classes
+  book.classList.add("book");
+
   // append to DOM
   divDelete.appendChild(deleteBtn);
   divTitle.appendChild(bookTitle);
