@@ -44,7 +44,27 @@ const addBookForm = document.forms['new-book'];
 addBookForm.addEventListener('submit', e => {
   e.preventDefault();
   const value = addBookForm.querySelector('input[type="text"]').value;
-  console.log(value);
+
+  // create elements
+
+  const divDelete = document.createElement('div');
+  const divTitle = document.createElement('div');
+
+  const book = document.createElement('div');
+  const deleteBtn = document.createElement('button');
+  const bookTitle = document.createElement('p');
+
+  //add content
+
+  deleteBtn.textContent = "delete";
+  bookTitle.textContent = value;
+
+  // append to DOM
+  divDelete.appendChild(deleteBtn);
+  divTitle.appendChild(bookTitle);
+
+  book.appendChild(divTitle);
+  book.appendChild(divDelete);
+  list.appendChild(book);
 });
 
-// ep 12 creating elements
