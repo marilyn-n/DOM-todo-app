@@ -72,3 +72,24 @@ const allQueryBook = document.querySelector('#book-list .book div p'); // return
 
 ## Add Style
 
+## Atributes
+
+```js
+book.getAttribute('class');
+console.log(book)
+// output: myClass
+book.setAttribute('class', 'myNewClass');
+console.log(book)
+// output: myNewClass
+book.hasAttribute('class');
+console.log(book)
+// true
+book.removeAttribure('class');
+console.log(book)
+// null
+book.setAttribute('src', 'http://fb.com');
+console.log(book)
+// src="http://fb.com"
+
+```
+

@@ -1,7 +1,10 @@
 const list = document.getElementById('book-list');
 const buttons = document.getElementsByTagName('button');
 const myBooks = document.getElementsByClassName('book');
-const toArray = [...buttons].map(btn => console.log(btn.textContent)); // turns HTML collection into an Iterable Array
+
+// turns HTML collection into an Iterable Array
+const toArray = [...buttons].map(btn => console.log(btn.textContent)); 
+
 const myQueryBook = document.querySelector('#book-list .book:nth-child(2) div:first-child p');
 const allQueryBooks = document.querySelectorAll('#book-list .book div p');
 
@@ -15,8 +18,9 @@ const changeParagraph = paragraphs => {
 
 changeParagraph(allParagraphs)
 
-//  replace or add text
+//  replace and append text
 const h3 = document.querySelector('h3');
+
 h3.innerHTML = '<h3>Books and more books </h3>'
 h3.innerHTML += '<h6>This is how you add text to HTML</h6>'
 
@@ -64,5 +68,5 @@ addBookForm.addEventListener('submit', e => {
   list.appendChild(book);
 });
 
-// ep 14 --> 
+
 // create readme from ep 12
