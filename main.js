@@ -69,4 +69,14 @@ addBookForm.addEventListener('submit', e => {
 });
 
 
-// create readme from ep 12
+// hide books
+
+const hideBooks = document.querySelector('#hide');
+
+hideBooks.addEventListener('change', function(e) {
+  if(hideBooks.checked) {
+    list.style.display = 'none';
+  } else {
+    list.style.display = 'initial'; // initial or block will show it;
+  }
+})
