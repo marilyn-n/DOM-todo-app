@@ -77,6 +77,6 @@ hideBooks.addEventListener('change', function(e) {
   if(hideBooks.checked) {
     list.style.display = 'none';
   } else {
-    list.style.display = 'initial'; // initial or block will show it;
+    list.style.display = 'block'; // initial or block will show the block;
   }
 })
