@@ -83,6 +83,24 @@ hideBooks.addEventListener('change', function(e) {
 
 // custom search filter
 
+const search = document.forms['search-book'].querySelector('input');
+search.addEventListener('keyup', function (e) {
+
+  let searchTerm = e.target.value.toLowerCase();
+  let book = list.getElementsByClassName('book');
+
+  [...book].map(item => {
+    const title = item.firstElementChild.textContent;
+    
+    if(title.toLowerCase().indexOf(searchTerm) != -1) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  })
+
+});
+
 
 
 
