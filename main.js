@@ -21,7 +21,7 @@ changeParagraph(allParagraphs)
 //  replace and append text
 const h3 = document.querySelector('h3');
 
-h3.innerHTML = '<h3>Books and more books </h3>'
+h3.innerHTML = '<h3>Books and more books </h3> <input type="checkbox" id="hide"> <label for="hide">Hide all books</label>'
 h3.innerHTML += '<h6>This is how you add text to HTML</h6>'
 
 // delete a book
@@ -80,3 +80,9 @@ hideBooks.addEventListener('change', function(e) {
     list.style.display = 'block'; // initial or block will show the block;
   }
 })
+
+// custom search filter
+
+
+
+
