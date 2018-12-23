@@ -69,7 +69,6 @@ addBookForm.addEventListener('submit', e => {
 });
 
 
-// hide books
 
 const hideBooks = document.querySelector('#hide');
 
@@ -81,7 +80,6 @@ hideBooks.addEventListener('change', function(e) {
   }
 })
 
-// custom search filter
 
 const search = document.forms['search-book'].querySelector('input');
 search.addEventListener('keyup', function (e) {
@@ -91,7 +89,7 @@ search.addEventListener('keyup', function (e) {
 
   [...book].map(item => {
     const title = item.firstElementChild.textContent;
-    
+
     if(title.toLowerCase().indexOf(searchTerm) != -1) {
       item.style.display = 'flex';
     } else {
