@@ -10,6 +10,7 @@ body {
 
 .search-book {
   background-color: rgb(219, 222, 224);
+
 }
 
 .container, h1 {
@@ -75,13 +76,15 @@ button {
   margin-right: 10px;
 }
 
-#tab-content .panel {
+#tab-content, .panel {
   display: none;
   border: 1px solid #ddd;
   padding: 0 10px;
   border-radius: 4px;
+  padding: 2rem;
+  margin: 1rem;
 }
 
-#tab-content .panel.active {
+#tab-content, .panel.active {
   display: block;
 }
