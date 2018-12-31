@@ -1,122 +1,123 @@
-const list = document.getElementById('book-list');
-const buttons = document.getElementsByTagName('button');
-const myBooks = document.getElementsByClassName('book');
+document.addEventListener('DOMContentLoaded', function(){
+  
+  const list = document.getElementById('book-list');
+  const buttons = document.getElementsByTagName('button');
+  const myBooks = document.getElementsByClassName('book');
 
-// turns HTML collection into an Iterable Array
-const toArray = [...buttons].map(btn => console.log(btn.textContent)); 
+  // turns HTML collection into an Iterable Array
+  const toArray = [...buttons].map(btn => console.log(btn.textContent)); 
 
-const myQueryBook = document.querySelector('#book-list .book:nth-child(2) div:first-child p');
-const allQueryBooks = document.querySelectorAll('#book-list .book div p');
+  const myQueryBook = document.querySelector('#book-list .book:nth-child(2) div:first-child p');
+  const allQueryBooks = document.querySelectorAll('#book-list .book div p');
 
-const allParagraphs = document.querySelectorAll('#book-list .book div p');
+  const allParagraphs = document.querySelectorAll('#book-list .book div p');
 
-const changeParagraph = paragraphs => {
-  const arr = [...paragraphs]
-    const paragraphsArr = arr.map(item => item.textContent += ' (book-title)')
-  return paragraphsArr
-}
-
-changeParagraph(allParagraphs)
-
-//  replace and append text
-const h3 = document.querySelector('h3');
-
-h3.innerHTML = '<h3>Books and more books </h3> <input type="checkbox" id="hide"> <label for="hide">Hide all books</label>'
-h3.innerHTML += '<h6>This is how you add text to HTML</h6>'
-
-// delete a book
-const bookList = document.querySelector('#book-list');
-
-bookList.addEventListener('click', e => {
-  if(e.target.tagName === 'BUTTON') {
-    const parent = e.target.parentElement.parentElement;  
-    parent.parentNode.removeChild(parent);
+  const changeParagraph = paragraphs => {
+    const arr = [...paragraphs]
+      const paragraphsArr = arr.map(item => item.textContent += ' (book-title)')
+    return paragraphsArr
   }
-});
 
-// forms
+  changeParagraph(allParagraphs)
 
-const addBookForm = document.forms['new-book'];
+  //  replace and append text
+  const h3 = document.querySelector('h3');
 
-addBookForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const value = addBookForm.querySelector('input[type="text"]').value;
+  h3.innerHTML = '<h3>Books and more books </h3> <input type="checkbox" id="hide"> <label for="hide">Hide all books</label>'
+  h3.innerHTML += '<h6>This is how you add text to HTML</h6>'
 
-  // create elements
+  // delete a book
+  const bookList = document.querySelector('#book-list');
 
-  const divDelete = document.createElement('div');
-  const divTitle = document.createElement('div');
+  bookList.addEventListener('click', e => {
+    if(e.target.tagName === 'BUTTON') {
+      const parent = e.target.parentElement.parentElement;  
+      parent.parentNode.removeChild(parent);
+    }
+  });
 
-  const book = document.createElement('div');
-  const deleteBtn = document.createElement('button');
-  const bookTitle = document.createElement('p');
+  // forms
 
-  //add content
+  const addBookForm = document.forms['new-book'];
 
-  deleteBtn.textContent = "delete";
-  bookTitle.textContent = value;
+  addBookForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const value = addBookForm.querySelector('input[type="text"]').value;
 
-  // add classes
-  book.classList.add("book");
+    // create elements
 
-  // append to DOM
-  divDelete.appendChild(deleteBtn);
-  divTitle.appendChild(bookTitle);
+    const divDelete = document.createElement('div');
+    const divTitle = document.createElement('div');
 
-  book.appendChild(divTitle);
-  book.appendChild(divDelete);
-  list.appendChild(book);
-});
+    const book = document.createElement('div');
+    const deleteBtn = document.createElement('button');
+    const bookTitle = document.createElement('p');
 
-// hidding books
+    //add content
 
-const hideBooks = document.querySelector('#hide');
+    deleteBtn.textContent = "delete";
+    bookTitle.textContent = value;
 
-hideBooks.addEventListener('change', function(e) {
-  if(hideBooks.checked) {
-    list.style.display = 'none';
-  } else {
-    list.style.display = 'block'; // initial or block will show the block;
-  }
-})
+    // add classes
+    book.classList.add("book");
 
-// search field
+    // append to DOM
+    divDelete.appendChild(deleteBtn);
+    divTitle.appendChild(bookTitle);
 
-const search = document.forms['search-book'].querySelector('input');
-search.addEventListener('keyup', function (e) {
+    book.appendChild(divTitle);
+    book.appendChild(divDelete);
+    list.appendChild(book);
+  });
 
-  let searchTerm = e.target.value.toLowerCase();
-  let book = list.getElementsByClassName('book');
+  // hidding books
 
-  [...book].map(item => {
-    const title = item.firstElementChild.textContent;
+  const hideBooks = document.querySelector('#hide');
 
-    if(title.toLowerCase().indexOf(searchTerm) != -1) {
-      item.style.display = 'flex';
+  hideBooks.addEventListener('change', function(e) {
+    if(hideBooks.checked) {
+      list.style.display = 'none';
     } else {
-      item.style.display = 'none';
+      list.style.display = 'block'; // initial or block will show the block;
     }
   })
 
-});
+  // search field
 
-// tabbed content
+  const search = document.forms['search-book'].querySelector('input');
+  search.addEventListener('keyup', function (e) {
 
-const tabs = document.querySelector('.tabs');
-const panels = document.querySelectorAll('.panel');
+    let searchTerm = e.target.value.toLowerCase();
+    let book = list.getElementsByClassName('book');
 
-tabs.addEventListener('click', function(e) {
-  if (e.target.tagName == 'LI') {
-    const targetPanel = document.querySelector(e.target.dataset.target);
-    panels.forEach(function(panel) {
-      if (panel == targetPanel) {
-        panel.classList.add('active');
+    [...book].map(item => {
+      const title = item.firstElementChild.textContent;
+
+      if(title.toLowerCase().indexOf(searchTerm) != -1) {
+        item.style.display = 'flex';
       } else {
-        panel.classList.remove('active');
+        item.style.display = 'none';
       }
     })
-  }
+
+  });
+
+  // tabbed content
+
+  const tabs = document.querySelector('.tabs');
+  const panels = document.querySelectorAll('.panel');
+
+  tabs.addEventListener('click', function(e) {
+    if (e.target.tagName == 'LI') {
+      const targetPanel = document.querySelector(e.target.dataset.target);
+      panels.forEach(function(panel) {
+        if (panel == targetPanel) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      })
+    }
+  })
+
 })
-
-
-

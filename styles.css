@@ -21,16 +21,15 @@ body {
 
 }
 
-/* input {
-  width: 250px;
-  margin-bottom: 20px;
-} */
-
 button {
   background-color: rgb(131, 92, 131);
   color: white;
   border-radius: 15%;
   padding: 5px;
+}
+button:hover {
+  background-color: black;
+  color: white;
 }
 .container > div:last-child {
   margin-top: 20px;
