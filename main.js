@@ -68,7 +68,7 @@ addBookForm.addEventListener('submit', e => {
   list.appendChild(book);
 });
 
-
+// hidding books
 
 const hideBooks = document.querySelector('#hide');
 
@@ -80,6 +80,7 @@ hideBooks.addEventListener('change', function(e) {
   }
 })
 
+// search field
 
 const search = document.forms['search-book'].querySelector('input');
 search.addEventListener('keyup', function (e) {
@@ -99,6 +100,10 @@ search.addEventListener('keyup', function (e) {
 
 });
 
+// tabbed content
+
+const tabs = document.querySelector('.tabs');
+const panels = document.querySelectorAll('.panel');
 
 
 

@@ -65,3 +65,23 @@ button {
   display: flex;
   justify-content: space-around;
 }
+
+#tab-content li {
+  display: inline-block;
+  padding: 10px 14px;
+  background-color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#tab-content .panel {
+  display: none;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+#tab-content .panel.active {
+  display: block;
+}
